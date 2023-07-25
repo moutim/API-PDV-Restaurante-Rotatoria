@@ -18,6 +18,14 @@ module.exports = {
           key: 'clienteId'
         }
       },
+      pagamentoId: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'PagamentoTipo',
+          key: 'pagamentoId'
+        }
+      },
       data: {
         type: Sequelize.DATE,
         defaultValue: Sequelize.fn('now')
