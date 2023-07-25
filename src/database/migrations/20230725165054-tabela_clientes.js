@@ -16,7 +16,7 @@ module.exports = {
       },
       telefone: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       cep: {
         allowNull: false,
@@ -28,7 +28,7 @@ module.exports = {
       },
       enderecoNumero: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       totalPedidos: {
         allowNull: false,

@@ -22,7 +22,7 @@ module.exports = {
         },
         primaryKey: true
       },
-      quantity: {
+      quantidade: {
         allowNull: false,
         type: Sequelize.INTEGER
       }

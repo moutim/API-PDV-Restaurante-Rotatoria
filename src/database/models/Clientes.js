@@ -5,7 +5,7 @@ const clientes = (sequelize, DataTypes) => {
             telefone: DataTypes.INTEGER,
             cep: DataTypes.INTEGER,
             endereco: DataTypes.STRING,
-            enderecoNumeroo: DataTypes.INTEGER,
+            enderecoNumeroo: DataTypes.STRING,
             totalPedidos: DataTypes.INTEGER,
             totalGastoo: DataTypes.FLOAT
         }
