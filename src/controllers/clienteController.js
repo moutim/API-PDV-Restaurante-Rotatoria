@@ -19,8 +19,15 @@ const getClienteVendas = async (req, res) => {
   res.status(StatusCodes.OK).json(clienteVendas);
 };
 
+const createCliente = async (req, res) => {
+  const result = await service.createCliente(req.body);
+
+  res.status(StatusCodes.CREATED).json(result);
+};
+
 module.exports = {
   getClientes,
   getCliente,
   getClienteVendas,
+  createCliente,
 };

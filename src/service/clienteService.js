@@ -36,8 +36,18 @@ const getClienteVendas = async (id) => {
   return clienteVendas;
 };
 
+const createCliente = async (info) => {
+  try {
+    const result = await Clientes.create({ ...info });
+    return result;
+  } catch (e) {
+    throw Object({ status: StatusCodes.BAD_REQUEST, message: e.message });
+  }
+};
+
 module.exports = {
   getClienteVendas,
   getClientes,
   getCliente,
+  createCliente,
 };

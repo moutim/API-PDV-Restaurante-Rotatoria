@@ -31,12 +31,10 @@ module.exports = {
         type: Sequelize.STRING
       },
       totalPedidos: {
-        allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       totalGasto: {
-        allowNull: false,
-        type: Sequelize.FLOAT
+        type: Sequelize.FLOAT,
       }
     })
   },

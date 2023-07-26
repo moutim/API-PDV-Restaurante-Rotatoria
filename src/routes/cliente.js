@@ -10,4 +10,6 @@ routes.get('/:telefone', controller.getCliente);
 
 routes.get('/:id/vendas', controller.getClienteVendas);
 
+routes.post('/', controller.createCliente);
+
 module.exports = routes;
