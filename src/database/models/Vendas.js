@@ -16,7 +16,7 @@ const vendas = (sequelize, DataTypes) => {
 
     tabelaVendas.associate = (models) => {
         tabelaVendas.belongsTo(models.Clientes, {
-            foreignKey: 'clienteId', as: 'vendas'
+            foreignKey: 'clienteId', as: 'cliente'
         });
 
         tabelaVendas.belongsTo(models.PagamentoTipos, {

@@ -6,4 +6,6 @@ routes.use('/cliente', require('./cliente'));
 
 routes.use('/produto', require('./produto'));
 
+routes.use('/venda', require('./venda'));
+
 module.exports = routes;
