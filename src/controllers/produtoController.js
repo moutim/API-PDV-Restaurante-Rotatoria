@@ -8,6 +8,13 @@ const getProdutos = async (req, res) => {
   res.status(StatusCodes.OK).json(produtos);
 };
 
+const createProduto = async (req, res) => {
+  const result = await service.createProduto(req.body);
+
+  res.status(StatusCodes.OK).json(result);
+};
+
 module.exports = {
   getProdutos,
+  createProduto,
 };

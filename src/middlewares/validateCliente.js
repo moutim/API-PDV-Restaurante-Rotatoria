@@ -4,11 +4,11 @@ const Joi = require('joi');
 const { StatusCodes } = require('http-status-codes');
 
 const createClienteSchema = Joi.object({
-  nome: Joi.string().min(3).max(20),
-  telefone: Joi.string().min(9).max(11),
-  cep: Joi.string().min(8).max(8),
-  endereco: Joi.string().min(5).max(50),
-  enderecoNumero: Joi.string().min(1).max(10),
+  nome: Joi.string().min(3).max(20).required(),
+  telefone: Joi.string().min(9).max(11).required(),
+  cep: Joi.string().min(8).max(8).required(),
+  endereco: Joi.string().min(5).max(50).required(),
+  enderecoNumero: Joi.string().min(1).max(10).required(),
 });
 
 const verifyCreateCliente = (req, res, next) => {
