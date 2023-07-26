@@ -45,9 +45,22 @@ const createCliente = async (info) => {
   }
 };
 
+const updateCliente = async (info, id) => {
+  try {
+    const result = await Clientes.update({ ...info }, { where: { clienteId: id } });
+
+    if (result[0]) return { message: 'Informacoes atualizadas com sucesso!' };
+
+    throw Object({ status: StatusCodes.INTERNAL_SERVER_ERROR, message: 'Nao foi possivel atualizar as informacoes' });
+  } catch (e) {
+    throw Object({ status: StatusCodes.BAD_REQUEST, message: e.message });
+  }
+};
+
 module.exports = {
   getClienteVendas,
   getClientes,
   getCliente,
   createCliente,
+  updateCliente,
 };

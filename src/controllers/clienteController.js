@@ -25,9 +25,16 @@ const createCliente = async (req, res) => {
   res.status(StatusCodes.CREATED).json(result);
 };
 
+const updateCliente = async (req, res) => {
+  const result = await service.updateCliente(req.body, req.params.id);
+
+  res.status(StatusCodes.OK).json(result);
+};
+
 module.exports = {
   getClientes,
   getCliente,
   getClienteVendas,
   createCliente,
+  updateCliente,
 };

@@ -14,4 +14,6 @@ routes.get('/:id/vendas', controller.getClienteVendas);
 
 routes.post('/', middlewares.verifyCreateCliente, controller.createCliente);
 
+routes.put('/:id', middlewares.verifyCreateCliente, controller.updateCliente);
+
 module.exports = routes;
