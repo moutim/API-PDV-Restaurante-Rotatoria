@@ -17,7 +17,20 @@ const createProduto = async (info) => {
   }
 };
 
+const updateProduto = async (info, id) => {
+  try {
+    const result = await Produtos.update({ ...info }, { where: { produtoId: id } });
+
+    if (result[0]) return { message: 'Informacoes atualizadas com sucesso!' };
+
+    throw Object({ status: StatusCodes.INTERNAL_SERVER_ERROR, message: 'Nao foi possivel atualizar as informacoes' });
+  } catch (e) {
+    throw Object({ status: StatusCodes.BAD_REQUEST, message: e.message });
+  }
+};
+
 module.exports = {
   getProdutos,
   createProduto,
+  updateProduto,
 };

@@ -14,7 +14,14 @@ const createProduto = async (req, res) => {
   res.status(StatusCodes.OK).json(result);
 };
 
+const updateProduto = async (req, res) => {
+  const result = await service.updateProduto(req.body, req.params.id);
+
+  res.status(StatusCodes.OK).json(result);
+};
+
 module.exports = {
   getProdutos,
   createProduto,
+  updateProduto,
 };

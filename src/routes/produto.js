@@ -10,4 +10,6 @@ routes.get('/', controller.getProdutos);
 
 routes.post('/', middlewares.verifyCreateProduto, controller.createProduto);
 
+routes.put('/:id', middlewares.verifyCreateProduto, controller.updateProduto);
+
 module.exports = routes;
