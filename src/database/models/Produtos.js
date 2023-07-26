@@ -1,6 +1,11 @@
 const produtos = (sequelize, DataTypes) => {
     const tabelaProdutos = sequelize.define('Produtos', 
         {
+            produtoId: {
+                type: DataTypes.INTEGER,
+                primaryKey: true,
+                autoIncrement: true
+            },
             nome: DataTypes.STRING,
             preco: DataTypes.FLOAT
         },
