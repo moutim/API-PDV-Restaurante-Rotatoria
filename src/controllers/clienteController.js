@@ -1,5 +1,5 @@
 const { StatusCodes } = require('http-status-codes');
-const service = require('../service/cliente.service');
+const service = require('../service/clienteService');
 
 const getClientes = async (req, res) => {
   const clientes = await service.getClientes();
@@ -13,7 +13,14 @@ const getCliente = async (req, res) => {
   res.status(StatusCodes.OK).json(cliente);
 };
 
+const getClienteVendas = async (req, res) => {
+  const clienteVendas = await service.getClienteVendas(req.params.id);
+
+  res.status(StatusCodes.OK).json(clienteVendas);
+};
+
 module.exports = {
   getClientes,
   getCliente,
+  getClienteVendas,
 };

@@ -1,7 +1,11 @@
 const vendas = (sequelize, DataTypes) => {
     const tabelaVendas = sequelize.define('Vendas', 
         {
-            vendaId: DataTypes.INTEGER,
+            vendaId: {
+                type: DataTypes.INTEGER,
+                primaryKey: true,
+                autoIncrement: true
+            },
             clienteId: DataTypes.INTEGER,
             pagamentoId: DataTypes.INTEGER,
             total: DataTypes.FLOAT,
@@ -11,11 +15,11 @@ const vendas = (sequelize, DataTypes) => {
     );
 
     tabelaVendas.associate = (models) => {
-        tabelaVendas.belongsTo(models.Vendas, {
+        tabelaVendas.belongsTo(models.Clientes, {
             foreignKey: 'clienteId', as: 'vendas'
         });
 
-        tabelaVendas.belongsTo(models.PagamentoTipo, {
+        tabelaVendas.belongsTo(models.PagamentoTipos, {
             foreignKey: 'pagamentoId', as: 'pagamento'
         });
 

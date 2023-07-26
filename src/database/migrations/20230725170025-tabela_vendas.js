@@ -22,7 +22,7 @@ module.exports = {
         allowNull: false,
         type: Sequelize.INTEGER,
         references: {
-          model: 'PagamentoTipo',
+          model: 'PagamentoTipos',
           key: 'pagamentoId'
         }
       },

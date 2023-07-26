@@ -3,7 +3,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.bulkInsert('PagamentoTipo', [
+    await queryInterface.bulkInsert('PagamentoTipos', [
       {
         tipo: 'PIX'
       },
@@ -20,6 +20,6 @@ module.exports = {
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.bulkDelete('PagamentoTipo', null, {});
+    await queryInterface.bulkDelete('PagamentoTipos', null, {});
   }
 };

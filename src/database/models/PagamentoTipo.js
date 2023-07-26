@@ -1,6 +1,11 @@
 const pagamentoTipo = (sequelize, DataTypes) => {
-    const tabelaPagamentoTipo = sequelize.define('PagamentoTipo', 
+    const tabelaPagamentoTipo = sequelize.define('PagamentoTipos', 
         {
+            pagamentoId: {
+                type: DataTypes.INTEGER,
+                primaryKey: true,
+                autoIncrement: true
+            },
             tipo: DataTypes.STRING
         },
         { timestamps: false }

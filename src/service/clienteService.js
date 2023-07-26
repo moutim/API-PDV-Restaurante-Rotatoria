@@ -1,5 +1,5 @@
 const { StatusCodes } = require('http-status-codes');
-const { Clientes } = require('../database/models');
+const { Clientes, Vendas, PagamentoTipos } = require('../database/models');
 
 const getClientes = async () => {
   const clientes = await Clientes.findAll();
@@ -21,7 +21,23 @@ const getCliente = async (telefone) => {
   return cliente;
 };
 
+const getClienteVendas = async (id) => {
+  const clienteVendas = await Vendas.findAll({
+    where: { clienteId: id },
+    include: [
+      { model: PagamentoTipos, as: 'pagamento' },
+    ],
+  });
+
+  if (!clienteVendas) {
+    throw Object({ status: StatusCodes.NOT_FOUND, message: 'Ainda nao ha vendas realizadas com esse cliente' });
+  }
+
+  return clienteVendas;
+};
+
 module.exports = {
+  getClienteVendas,
   getClientes,
   getCliente,
 };
