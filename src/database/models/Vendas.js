@@ -6,7 +6,8 @@ const vendas = (sequelize, DataTypes) => {
             pagamentoId: DataTypes.INTEGER,
             total: DataTypes.FLOAT,
             data: DataTypes.STRING
-        }
+        },
+        { timestamps: false }
     );
 
     tabelaVendas.associate = (models) => {

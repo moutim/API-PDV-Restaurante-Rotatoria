@@ -2,7 +2,8 @@ const pagamentoTipo = (sequelize, DataTypes) => {
     const tabelaPagamentoTipo = sequelize.define('PagamentoTipo', 
         {
             tipo: DataTypes.STRING
-        }
+        },
+        { timestamps: false }
     );
 
     tabelaPagamentoTipo.associate = (models) => {

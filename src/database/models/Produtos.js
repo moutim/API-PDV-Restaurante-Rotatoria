@@ -3,7 +3,8 @@ const produtos = (sequelize, DataTypes) => {
         {
             nome: DataTypes.STRING,
             preco: DataTypes.FLOAT
-        }
+        },
+        { timestamps: false }
     );
 
     tabelaProdutos.associate = (models) => {

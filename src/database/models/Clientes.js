@@ -1,14 +1,20 @@
 const clientes = (sequelize, DataTypes) => {
     const tabelaClientes = sequelize.define('Clientes', 
         {
+            clienteId: {
+                type: DataTypes.INTEGER,
+                primaryKey: true,
+                autoIncrement: true
+            },
             nome: DataTypes.STRING,
             telefone: DataTypes.INTEGER,
-            cep: DataTypes.INTEGER,
+            cep: DataTypes.STRING,
             endereco: DataTypes.STRING,
-            enderecoNumeroo: DataTypes.STRING,
+            enderecoNumero: DataTypes.STRING,
             totalPedidos: DataTypes.INTEGER,
-            totalGastoo: DataTypes.FLOAT
-        }
+            totalGasto: DataTypes.FLOAT
+        },
+        { timestamps: false }
     );
 
     tabelaClientes.associate = (models) => {

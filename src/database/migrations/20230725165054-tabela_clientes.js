@@ -20,7 +20,7 @@ module.exports = {
       },
       cep: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       endereco: {
         allowNull: false,

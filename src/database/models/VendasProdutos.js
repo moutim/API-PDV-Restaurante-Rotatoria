@@ -1,10 +1,11 @@
 const vendasProdutos = (sequelize, DataTypes) => {
-    const tabelaVendasProdutos = sequelize.define('Produtos', 
+    const tabelaVendasProdutos = sequelize.define('VendasProdutos', 
         {
             produtoId: DataTypes.INTEGER,
             vendaId: DataTypes.INTEGER,
             quantidade: DataTypes.INTEGER
-        }
+        },
+        { timestamps: false }
     );
 
     tabelaVendasProdutos.associate = (models) => {
