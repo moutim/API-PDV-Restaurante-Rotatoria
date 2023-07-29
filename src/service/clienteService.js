@@ -25,8 +25,10 @@ const getClienteVendas = async (id) => {
   const clienteVendas = await Vendas.findAll({
     where: { clienteId: id },
     include: [
-      { model: PagamentoTipos, as: 'pagamento' },
+      { model: PagamentoTipos, as: 'pagamento', attributes: ['tipo'] },
+      { model: Clientes, as: 'cliente', attributes: ['nome'] },
     ],
+    attributes: { exclude: 'clienteId' },
   });
 
   if (!clienteVendas) {

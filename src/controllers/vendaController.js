@@ -8,6 +8,13 @@ const getVendas = async (req, res) => {
   res.status(StatusCodes.OK).json(vendas);
 };
 
+const createVendas = async (req, res) => {
+  const result = await service.createVendas(req.body);
+
+  res.status(StatusCodes.OK).json(result);
+};
+
 module.exports = {
   getVendas,
+  createVendas,
 };
