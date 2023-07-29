@@ -16,8 +16,22 @@ const getVendas = async () => {
 };
 
 const createVendas = async (info) => {
-  const result = info;
-  return result;
+  const {
+    clienteId, pagamentoId, total, produtos,
+  } = info;
+
+  try {
+    const resultCreateVenda = await Vendas.create({ clienteId, pagamentoId, total });
+    const { vendaId } = resultCreateVenda.dataValues;
+
+    produtos.forEach(({ produtoId, quantidade }) => {
+      VendasProdutos.create({ vendaId, produtoId, quantidade });
+    });
+
+    return { vendaId, message: 'Venda criada com sucesso!' };
+  } catch (e) {
+    throw Object(e);
+  }
 };
 
 module.exports = {
